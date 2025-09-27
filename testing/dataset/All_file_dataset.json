@@ -1,0 +1,19 @@
+{
+	"name": "All_file_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSgen2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "22-09-2025",
+				"fileSystem": "bronze"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
