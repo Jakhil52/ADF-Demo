@@ -5,6 +5,14 @@
 			"referenceName": "AzureSqlDatabase1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"TABLE_NAME": {
+				"type": "string"
+			},
+			"TABLE_SCHEMA": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
@@ -95,8 +103,14 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "SalesLT",
-			"table": "Product"
+			"schema": {
+				"value": "@dataset().TABLE_SCHEMA",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().TABLE_NAME",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
